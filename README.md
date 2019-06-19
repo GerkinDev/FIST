@@ -76,6 +76,14 @@ or simply *N*
 npm i -g n
 ```
 
+#### Firefox
+
+Firefox is shipped by default with most Linux distros, but often configured for a classical desktop environment without touch scroll support. You can solve it by following [this solution](https://askubuntu.com/questions/853910/ubuntu-16-and-touchscreen-scrolling-in-firefox/886914#886914), resumed here:
+
+1. Open the Firefox desktop entry with `sudo gedit /usr/share/applications/firefox.desktop` (or whatever text editor you like)
+2. Add the `MOZ_USE_XINPUT2=1` to Firefox environment variable, replacing `Exec=firefox %u` with `Exec=env MOZ_USE_XINPUT2=1 firefox %u`
+3. Save, and enjoy.
+
 #### Qemu/KVM/Libvirt/Virt-Manager
 
 Talking about SysAdmin tools virtualisation is a must have.
